@@ -1,3 +1,4 @@
+import 'package:drivers_app/authentication/signup_screen.dart';
 import 'package:drivers_app/pages/dashboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -98,11 +99,20 @@ class _LoginScreenState extends State<LoginScreen>
           child: Column(
             children: [
 
-              Image.asset(
-                "assets/images/uberexec.png"
+              const SizedBox(
+                height: 60,
               ),
 
-              Text(
+              Image.asset(
+                "assets/images/uberexec.png",
+                width: 220,
+              ),
+
+              const SizedBox(
+                height: 30,
+              ),
+
+              const Text(
                 "Login as a Driver",
                 style: TextStyle(
                   fontSize: 26,
