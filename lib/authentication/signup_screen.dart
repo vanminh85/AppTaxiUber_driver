@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:drivers_app/pages/dashboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -30,10 +31,34 @@ class _SignUpScreenState extends State<SignUpScreen>
   TextEditingController vehicleNumberTextEditingController = TextEditingController();
   CommonMethods cMethods = CommonMethods();
   XFile? imageFile;
+  String urlOfUploadedImage = "";
 
 
   checkIfNetworkIsAvailable() {
     cMethods.checkConnectivity(context);
+
+    if (imageFile != null)
+    {
+      uploadImageToStorage();
+    }
+    else
+    {
+      cMethods.displaySnackBar("Please choose image first.", context);
+    }
+  }
+
+  uploadImageToStorage() async
+  {
+    String imageIDName = DateTime.now().millisecondsSinceEpoch.toString();
+    Reference referenceImage = FirebaseStorage.instance.ref().child("Images").child(imageIDName);
+
+    UploadTask uploadTask = referenceImage.putFile(File(imageFile!.path));
+    TaskSnapshot snapshot = await uploadTask;
+    urlOfUploadedImage = await snapshot.ref.getDownloadURL();
+
+    setState(() {
+      urlOfUploadedImage;
+    });
 
     signUpFormValidation();
   }
