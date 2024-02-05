@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:drivers_app/pages/dashboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -26,6 +28,7 @@ class _SignUpScreenState extends State<SignUpScreen>
   TextEditingController vehicleColorTextEditingController = TextEditingController();
   TextEditingController vehicleNumberTextEditingController = TextEditingController();
   CommonMethods cMethods = CommonMethods();
+  XFile? imageFile;
 
 
   checkIfNetworkIsAvailable() {
@@ -89,6 +92,18 @@ class _SignUpScreenState extends State<SignUpScreen>
     Navigator.push(context, MaterialPageRoute(builder: (c)=> Dashboard()));
   }
 
+  chooseImageFromeGallery() async
+  {
+    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null)
+    {
+      setState(() {
+        imageFile = pickedFile;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,9 +117,25 @@ class _SignUpScreenState extends State<SignUpScreen>
                 height: 40,
               ),
 
+              imageFile == null ?
               const CircleAvatar(
                 radius: 86,
                 backgroundImage: AssetImage("assets/images/avatarman.png"),
+              ) : Container(
+                width: 180,
+                height: 180,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.grey,
+                  image: DecorationImage(
+                    fit: BoxFit.fitHeight,
+                    image: FileImage(
+                      File(
+                        imageFile!.path,
+                      ),
+                    )
+                  )
+                ),
               ),
 
               const SizedBox(
@@ -114,7 +145,7 @@ class _SignUpScreenState extends State<SignUpScreen>
               GestureDetector(
                 onTap: ()
                 {
-
+                  chooseImageFromGallery();
                 },
                 child: const Text(
                   "Choose Image",
