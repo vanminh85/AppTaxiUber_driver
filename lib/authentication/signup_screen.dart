@@ -39,7 +39,7 @@ class _SignUpScreenState extends State<SignUpScreen>
 
     if (imageFile != null)
     {
-
+      signUpFormValidation();
     }
     else
     {

@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "580216574518",
+    "firebase_url": "https://flutter-uber-clone-with-412be-default-rtdb.firebaseio.com",
+    "project_id": "flutter-uber-clone-with-412be",
+    "storage_bucket": "flutter-uber-clone-with-412be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580216574518:android:c16efa1adace1e8e733e97",
+        "android_client_info": {
+          "package_name": "com.flutterubertaxi.driversapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8cfSNTxbXDnnikm7maw9KJJZRPca8gJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580216574518:android:80b510fa4a327910733e97",
+        "android_client_info": {
+          "package_name": "com.flutterubertaxi.usersapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8cfSNTxbXDnnikm7maw9KJJZRPca8gJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580216574518:android:b73575ad6e2a6fdb733e97",
+        "android_client_info": {
+          "package_name": "com.minhnguyen.usersapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8cfSNTxbXDnnikm7maw9KJJZRPca8gJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
