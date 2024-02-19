@@ -39,11 +39,39 @@ class _SignUpScreenState extends State<SignUpScreen>
 
     if (imageFile != null)
     {
-      uploadImageToStorage();
+      signUpFormValidation();
     }
     else
     {
       cMethods.displaySnackBar("Please choose image first.", context);
+    }
+  }
+
+  signUpFormValidation() {
+    if (userNameTextEditingController.text.trim().length < 3) {
+      cMethods.displaySnackBar("Your name must be at least 4 or more characters.", context);
+    }
+    else if (userPhoneTextEditingController.text.trim().length < 7) {
+      cMethods.displaySnackBar("Your phone number must be at least 8 or more characters.", context);
+    }
+    else if (!emailTextEditingController.text.contains("@")) {
+      cMethods.displaySnackBar("Please write valid email.", context);
+    }
+    else if (passwordTextEditingController.text.trim().length < 5) {
+      cMethods.displaySnackBar("Your password must be at least 6 or more characters.", context);
+    }
+    else if (vehicleModelTextEditingController.text.trim().isEmpty) {
+      cMethods.displaySnackBar("Please write your car model.", context);
+    }
+    else if (vehicleColorTextEditingController.text.trim().isEmpty) {
+      cMethods.displaySnackBar("Please write your car color.", context);
+    }
+    else if (vehicleNumberTextEditingController.text.trim().isEmpty) {
+      cMethods.displaySnackBar("Please write your car number.", context);
+    }
+    else
+    {
+      uploadImageToStorage();
     }
   }
 
@@ -60,29 +88,10 @@ class _SignUpScreenState extends State<SignUpScreen>
       urlOfUploadedImage;
     });
 
-    signUpFormValidation();
+    registerNewDriver();
   }
 
-  signUpFormValidation() {
-    if (userNameTextEditingController.text.trim().length < 3) {
-      cMethods.displaySnackBar("Your name must be at least 4 or more characters.", context);
-    }
-    else if (userPhoneTextEditingController.text.trim().length < 7) {
-      cMethods.displaySnackBar("Your phone number must be at least 8 or more characters.", context);
-    }
-    else if (!emailTextEditingController.text.contains("@")) {
-      cMethods.displaySnackBar("Please write valid email.", context);
-    }
-    else if (passwordTextEditingController.text.trim().length < 5) {
-      cMethods.displaySnackBar("Your password must be at least 6 or more characters.", context);
-    }
-    else
-    {
-      registerNewUser();
-    }
-  }
-
-  registerNewUser() async
+  registerNewDriver() async
   {
     showDialog(
         context: context,
@@ -104,16 +113,26 @@ class _SignUpScreenState extends State<SignUpScreen>
     if(!context.mounted) return;
     Navigator.pop(context);
 
-    DatabaseReference usersRef = FirebaseDatabase.instance.ref().child("users").child(userFirebase!.uid);
-    Map userDataMap =
+    DatabaseReference usersRef = FirebaseDatabase.instance.ref().child("drivers").child(userFirebase!.uid);
+
+    Map driverCarInfo =
     {
+      "carColor": vehicleColorTextEditingController.text.trim(),
+      "carModel": vehicleModelTextEditingController.text.trim(),
+      "carNumber": vehicleNumberTextEditingController.text.trim(),
+    };
+
+    Map driverDataMap =
+    {
+      "photo": urlOfUploadedImage,
+      "car_details": driverCarInfo,
       "name": userNameTextEditingController.text.trim(),
       "email": emailTextEditingController.text.trim(),
       "phone": userPhoneTextEditingController.text.trim(),
       "id": userFirebase.uid,
       "blockStatus": "no",
     };
-    usersRef.set(userDataMap);
+    usersRef.set(driverDataMap);
 
     Navigator.push(context, MaterialPageRoute(builder: (c)=> Dashboard()));
   }
