@@ -1,22 +1,22 @@
 {
   "project_info": {
-    "project_number": "580216574518",
-    "firebase_url": "https://flutter-uber-clone-with-412be-default-rtdb.firebaseio.com",
-    "project_id": "flutter-uber-clone-with-412be",
-    "storage_bucket": "flutter-uber-clone-with-412be.appspot.com"
+    "project_number": "1086133849463",
+    "firebase_url": "https://flutter-uber-clone-with-6f304-default-rtdb.firebaseio.com",
+    "project_id": "flutter-uber-clone-with-6f304",
+    "storage_bucket": "flutter-uber-clone-with-6f304.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:580216574518:android:c16efa1adace1e8e733e97",
+        "mobilesdk_app_id": "1:1086133849463:android:e95207fcc853f1bc3d2572",
         "android_client_info": {
-          "package_name": "com.flutterubertaxi.driversapp"
+          "package_name": "com.nvminh09.driversapp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB8cfSNTxbXDnnikm7maw9KJJZRPca8gJw"
+          "current_key": "AIzaSyBJgr5oOX7Mb85W7QGN75JtL1YFwvlzfec"
         }
       ],
       "services": {
@@ -27,15 +27,15 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:580216574518:android:80b510fa4a327910733e97",
+        "mobilesdk_app_id": "1:1086133849463:android:7d3d383494e30a3f3d2572",
         "android_client_info": {
-          "package_name": "com.flutterubertaxi.usersapp"
+          "package_name": "com.nvminh09.driversapp_new"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB8cfSNTxbXDnnikm7maw9KJJZRPca8gJw"
+          "current_key": "AIzaSyBJgr5oOX7Mb85W7QGN75JtL1YFwvlzfec"
         }
       ],
       "services": {
@@ -46,15 +46,34 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:580216574518:android:b73575ad6e2a6fdb733e97",
+        "mobilesdk_app_id": "1:1086133849463:android:6928ea36f5c0c1003d2572",
         "android_client_info": {
-          "package_name": "com.minhnguyen.usersapp"
+          "package_name": "com.nvminh09.userapp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB8cfSNTxbXDnnikm7maw9KJJZRPca8gJw"
+          "current_key": "AIzaSyBJgr5oOX7Mb85W7QGN75JtL1YFwvlzfec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086133849463:android:d798b4de4f153ef53d2572",
+        "android_client_info": {
+          "package_name": "com.nvminh09.usersapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJgr5oOX7Mb85W7QGN75JtL1YFwvlzfec"
         }
       ],
       "services": {
