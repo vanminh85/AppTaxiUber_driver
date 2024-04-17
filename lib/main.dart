@@ -19,6 +19,14 @@ Future<void> main() async
     }
   });
 
+  await Permission.notification.isDenied.then((valueOfPermission)
+  {
+    if(valueOfPermission)
+    {
+      Permission.notification.request();
+    }
+  });
+
   runApp(const MyApp());
 }
 
@@ -30,7 +38,7 @@ class MyApp extends StatelessWidget
   Widget build(BuildContext context)
   {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Drivers App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,

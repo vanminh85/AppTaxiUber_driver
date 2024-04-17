@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:drivers_app/pushNotification/push_notification_system.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -108,6 +109,20 @@ class _HomePageState extends State<HomePage>
     newTripRequestReference!.onDisconnect();
     newTripRequestReference!.remove();
     newTripRequestReference = null;
+  }
+
+  initializePushNotificationSystem()
+  {
+    PushNotificationSystem notificationSystem = PushNotificationSystem();
+    notificationSystem.generateDeviceRegistrationToken();
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    initializePushNotificationSystem();
   }
 
   @override
