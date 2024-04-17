@@ -17,7 +17,6 @@ class _TripsPageState extends State<TripsPage> {
           style: TextStyle(
             color: Colors.white,
             fontSize: 24,
-
           ),
         ),
       ),

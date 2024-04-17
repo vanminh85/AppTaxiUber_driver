@@ -17,7 +17,6 @@ class _EarningsPageState extends State<EarningsPage> {
           style: TextStyle(
             color: Colors.white,
             fontSize: 24,
-
           ),
         ),
       ),
