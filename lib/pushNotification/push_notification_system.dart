@@ -20,4 +20,37 @@ class PushNotificationSystem
     firebaseCloudMessaging.subscribeToTopic("drivers");
     firebaseCloudMessaging.subscribeToTopic("users");
   }
+
+  startListeningForNewNotification() async
+  {
+    ///1. Terminated
+    //When the app is completely closed and it receives a push notification
+    FirebaseMessaging.instance.getInitialMessage().then((RemoteMessage? messageRemote)
+    {
+      if(messageRemote != null)
+      {
+        String tripID = messageRemote.data["tripID"];
+      }
+    });
+
+    ///2. Foreground
+    //When the app is open and it receives a push notification
+    FirebaseMessaging.onMessage.listen((RemoteMessage? messageRemote)
+    {
+      if(messageRemote != null)
+      {
+        String tripID = messageRemote.data["tripID"];
+      }
+    });
+
+    ///3. Background
+    //When the app is in the background and it receives a push notification
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage? messageRemote)
+    {
+      if(messageRemote != null)
+      {
+        String tripID = messageRemote.data["tripID"];
+      }
+    });
+  }
 }
