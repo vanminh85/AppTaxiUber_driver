@@ -1,9 +1,9 @@
 import 'package:drivers_app/pages/earnings_page.dart';
+import 'package:drivers_app/pages/home_page.dart';
 import 'package:drivers_app/pages/profile_page.dart';
 import 'package:drivers_app/pages/trips_page.dart';
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
 
 class Dashboard extends StatefulWidget
 {
@@ -13,10 +13,13 @@ class Dashboard extends StatefulWidget
   State<Dashboard> createState() => _DashboardState();
 }
 
+
+
 class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMixin
 {
   TabController? controller;
   int indexSelected = 0;
+
 
   onBarItemClicked(int i)
   {
@@ -40,7 +43,6 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
     controller!.dispose();
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context)

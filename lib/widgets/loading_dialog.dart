@@ -7,6 +7,8 @@ class LoadingDialog extends StatelessWidget
 
   LoadingDialog({super.key, required this.messageText,});
 
+
+
   @override
   Widget build(BuildContext context)
   {
@@ -42,6 +44,7 @@ class LoadingDialog extends StatelessWidget
                   color: Colors.white,
                 ),
               ),
+
             ],
           ),
         ),
@@ -49,5 +52,3 @@ class LoadingDialog extends StatelessWidget
     );
   }
 }
-
-

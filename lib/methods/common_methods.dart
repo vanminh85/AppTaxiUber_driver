@@ -7,11 +7,11 @@ class CommonMethods
   {
     var connectionResult = await Connectivity().checkConnectivity();
 
-    if (connectionResult != ConnectivityResult.mobile && connectionResult != ConnectivityResult.wifi)
-      {
-        if (!context.mounted) return;
-        displaySnackBar("Your Internet is not Available. Check your connection. Try again.", context);
-      }
+    if(connectionResult != ConnectivityResult.mobile && connectionResult != ConnectivityResult.wifi)
+    {
+      if(!context.mounted) return;
+      displaySnackBar("your Internet is not Available. Check your connection. Try Again.", context);
+    }
   }
 
   displaySnackBar(String messageText, BuildContext context)
