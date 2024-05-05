@@ -6,7 +6,7 @@ class MapThemeMethods
 {
   void updateMapTheme(GoogleMapController controller)
   {
-    getJsonFileFromThemes("themes/night_style.json").then((value)=> setGoogleMapStyle(value, controller));
+    getJsonFileFromThemes("themes/standard_style.json").then((value)=> setGoogleMapStyle(value, controller));
   }
 
   Future<String> getJsonFileFromThemes(String mapStylePath) async
