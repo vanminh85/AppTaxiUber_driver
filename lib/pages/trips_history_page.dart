@@ -23,9 +23,9 @@ class _TripsHistoryPageState extends State<TripsHistoryPage>
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'My Completed Trips',
+          'All of the completed Trips',
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.yellow,
           ),
         ),
         leading: IconButton(
@@ -44,8 +44,8 @@ class _TripsHistoryPageState extends State<TripsHistoryPage>
           {
             return const Center(
               child: Text(
-                "Error Occurred.",
-                style: TextStyle(color: Colors.white),
+                "Error.",
+                style: TextStyle(color: Colors.red),
               ),
             );
           }
@@ -55,7 +55,7 @@ class _TripsHistoryPageState extends State<TripsHistoryPage>
             return const Center(
               child: Text(
                 "No record found.",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.yellow),
               ),
             );
           }
@@ -74,7 +74,7 @@ class _TripsHistoryPageState extends State<TripsHistoryPage>
                   && tripsList[index]["driverID"] == FirebaseAuth.instance.currentUser!.uid)
               {
                 return Card(
-                  color: Colors.white12,
+                  color: Colors.brown,
                   elevation: 10,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
@@ -104,10 +104,10 @@ class _TripsHistoryPageState extends State<TripsHistoryPage>
                             const SizedBox(width: 5,),
 
                             Text(
-                              "\$ " + tripsList[index]["fareAmount"].toString(),
+                              "VND " + tripsList[index]["fareAmount"].toString(),
                               style: const TextStyle(
                                 fontSize: 16,
-                                color: Colors.white,
+                                color: Colors.yellow,
                               ),
                             ),
 

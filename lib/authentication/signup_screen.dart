@@ -45,7 +45,7 @@ class _SignUpScreenState extends State<SignUpScreen>
     }
     else
     {
-      cMethods.displaySnackBar("Please choose image first.", context);
+      cMethods.displaySnackBar("Choose image first.", context);
     }
   }
 
@@ -53,31 +53,31 @@ class _SignUpScreenState extends State<SignUpScreen>
   {
     if(userNameTextEditingController.text.trim().length < 3)
     {
-      cMethods.displaySnackBar("your name must be atleast 4 or more characters.", context);
+      cMethods.displaySnackBar("Name must be at least 4 characters.", context);
     }
     else if(userPhoneTextEditingController.text.trim().length < 7)
     {
-      cMethods.displaySnackBar("your phone number must be atleast 8 or more characters.", context);
+      cMethods.displaySnackBar("Phone number must be at least 8 numbers.", context);
     }
     else if(!emailTextEditingController.text.contains("@"))
     {
-      cMethods.displaySnackBar("please write valid email.", context);
+      cMethods.displaySnackBar("please type the valid email.", context);
     }
     else if(passwordTextEditingController.text.trim().length < 5)
     {
-      cMethods.displaySnackBar("your password must be atleast 6 or more characters.", context);
+      cMethods.displaySnackBar("Password must be at least 6 characters.", context);
     }
     else if(vehicleModelTextEditingController.text.trim().isEmpty)
     {
-      cMethods.displaySnackBar("please write your car model", context);
+      cMethods.displaySnackBar("Please write your car model", context);
     }
     else if(vehicleColorTextEditingController.text.trim().isEmpty)
     {
-      cMethods.displaySnackBar("please write your car color.", context);
+      cMethods.displaySnackBar("Please write your car color.", context);
     }
     else if(vehicleNumberTextEditingController.text.isEmpty)
     {
-      cMethods.displaySnackBar("please write your car number.", context);
+      cMethods.displaySnackBar("Please write your car number.", context);
     }
     else
     {
@@ -182,7 +182,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                 height: 180,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.grey,
+                  color: Colors.green,
                   image: DecorationImage(
                     fit: BoxFit.fitHeight,
                     image: FileImage(
@@ -222,13 +222,13 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: userNameTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Name",
+                        labelText: "Full name of driver",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
                       ),
                       style: const TextStyle(
-                        color: Colors.grey,
+                        color: Colors.yellow,
                         fontSize: 15,
                       ),
                     ),
@@ -239,13 +239,13 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: userPhoneTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Phone",
+                        labelText: "Phone number of driver",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
                       ),
                       style: const TextStyle(
-                        color: Colors.grey,
+                        color: Colors.yellow,
                         fontSize: 15,
                       ),
                     ),
@@ -256,13 +256,13 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: emailTextEditingController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
-                        labelText: "your Email",
+                        labelText: "Email of driver",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
                       ),
                       style: const TextStyle(
-                        color: Colors.grey,
+                        color: Colors.yellow,
                         fontSize: 15,
                       ),
                     ),
@@ -274,13 +274,13 @@ class _SignUpScreenState extends State<SignUpScreen>
                       obscureText: true,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Password",
+                        labelText: "Password",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
                       ),
                       style: const TextStyle(
-                        color: Colors.grey,
+                        color: Colors.yellow,
                         fontSize: 15,
                       ),
                     ),
@@ -291,13 +291,13 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: vehicleModelTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Car Model",
+                        labelText: "Model of car",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
                       ),
                       style: const TextStyle(
-                        color: Colors.grey,
+                        color: Colors.yellow,
                         fontSize: 15,
                       ),
                     ),
@@ -308,13 +308,13 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: vehicleColorTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Car Color",
+                        labelText: "Color of car",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
                       ),
                       style: const TextStyle(
-                        color: Colors.grey,
+                        color: Colors.yellow,
                         fontSize: 15,
                       ),
                     ),
@@ -325,13 +325,13 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: vehicleNumberTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Car Number",
+                        labelText: "Car number",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
                       ),
                       style: const TextStyle(
-                        color: Colors.grey,
+                        color: Colors.yellow,
                         fontSize: 15,
                       ),
                     ),
@@ -367,7 +367,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                 child: const Text(
                   "Already have an Account? Login Here",
                   style: TextStyle(
-                    color: Colors.grey,
+                    color: Colors.green,
                   ),
                 ),
               ),

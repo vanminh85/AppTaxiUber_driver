@@ -61,14 +61,14 @@ class _EarningsPageState extends State<EarningsPage>
                     ),
 
                     const Text(
-                      "Total Earnings:",
+                      "Total Money:",
                       style: TextStyle(
                         color: Colors.white,
                       ),
                     ),
 
                     Text(
-                      "\$ " + driverEarnings,
+                      "VND " + driverEarnings,
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 30,

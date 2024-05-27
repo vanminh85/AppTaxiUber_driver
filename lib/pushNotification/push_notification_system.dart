@@ -73,7 +73,7 @@ class PushNotificationSystem
     showDialog(
         context: context,
         barrierDismissible: false,
-        builder: (BuildContext context) => LoadingDialog(messageText: "getting details..."),
+        builder: (BuildContext context) => LoadingDialog(messageText: "Getting data..."),
     );
 
     DatabaseReference tripRequestsRef = FirebaseDatabase.instance.ref().child("tripRequests").child(tripID);

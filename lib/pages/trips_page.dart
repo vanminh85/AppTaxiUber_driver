@@ -66,14 +66,14 @@ class _TripsPageState extends State<TripsPage>
           //Total Trips
           Center(
             child: Container(
-              color: Colors.indigo,
+              color: Colors.indigo[200],
               width: 300,
               child: Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Column(
                   children: [
 
-                    Image.asset("assets/images/totaltrips.png", width: 120,),
+                    //Image.asset("assets/images/totaltrips.png", width: 120,),
 
                     const SizedBox(
                       height: 10,
@@ -83,14 +83,15 @@ class _TripsPageState extends State<TripsPage>
                       "Total Trips:",
                       style: TextStyle(
                         color: Colors.white,
+                        fontSize: 24,
                       ),
                     ),
 
                     Text(
                       currentDriverTotalTripsCompleted,
                       style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
+                        color: Colors.yellow,
+                        fontSize: 32,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -123,13 +124,14 @@ class _TripsPageState extends State<TripsPage>
                       Image.asset("assets/images/tripscompleted.png", width: 150,),
 
                       const SizedBox(
-                        height: 10,
+                        height: 16,
                       ),
 
                       const Text(
-                        "Check Trips History",
+                        "Trips in History",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.yellow,
+                          fontSize: 18,
                         ),
                       ),
 

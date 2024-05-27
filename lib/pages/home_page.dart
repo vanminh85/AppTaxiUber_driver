@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage>
   GoogleMapController? controllerGoogleMap;
   Position? currentPositionOfDriver;
   Color colorToShow = Colors.green;
-  String titleToShow = "GO ONLINE NOW";
+  String titleToShow = "ONLINE NOW";
   bool isDriverAvailable = false;
   DatabaseReference? newTripRequestReference;
   MapThemeMethods themeMethods = MapThemeMethods();
@@ -201,7 +201,7 @@ class _HomePageState extends State<HomePage>
                                   const SizedBox(height:  11,),
 
                                   Text(
-                                      (!isDriverAvailable) ? "GO ONLINE NOW" : "GO OFFLINE NOW",
+                                      (!isDriverAvailable) ? "ONLINE NOW" : "OFFLINE NOW",
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                       fontSize: 22,
@@ -214,11 +214,11 @@ class _HomePageState extends State<HomePage>
 
                                   Text(
                                     (!isDriverAvailable)
-                                        ? "You are about to go online, you will become available to receive trip requests from users."
-                                        : "You are about to go offline, you will stop receiving new trip requests from users.",
+                                        ? "If you are online, you will become available to receive the trips."
+                                        : "If you are offline, you will stop receiving new trips.",
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
-                                      color: Colors.white30,
+                                      color: Colors.yellow,
                                     ),
                                   ),
 
@@ -257,7 +257,7 @@ class _HomePageState extends State<HomePage>
 
                                               setState(() {
                                                 colorToShow = Colors.pink;
-                                                titleToShow = "GO OFFLINE NOW";
+                                                titleToShow = "OFFLINE NOW";
                                                 isDriverAvailable = true;
                                               });
                                             }
@@ -270,13 +270,13 @@ class _HomePageState extends State<HomePage>
 
                                               setState(() {
                                                 colorToShow = Colors.green;
-                                                titleToShow = "GO ONLINE NOW";
+                                                titleToShow = "ONLINE NOW";
                                                 isDriverAvailable = false;
                                               });
                                             }
                                           },
                                           style: ElevatedButton.styleFrom(
-                                            backgroundColor: (titleToShow == "GO ONLINE NOW")
+                                            backgroundColor: (titleToShow == "ONLINE NOW")
                                                 ? Colors.green
                                                 : Colors.pink,
                                           ),
