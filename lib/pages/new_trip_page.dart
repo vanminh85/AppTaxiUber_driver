@@ -550,7 +550,7 @@ class _NewTripPageState extends State<NewTripPage>
                           if(statusOfTrip == "accepted")
                           {
                             setState(() {
-                              buttonTitleText = "START TRIP";
+                              buttonTitleText = "START TRIP NOW";
                               buttonColor = Colors.green;
                             });
 
@@ -578,7 +578,7 @@ class _NewTripPageState extends State<NewTripPage>
                           else if(statusOfTrip == "arrived")
                           {
                             setState(() {
-                              buttonTitleText = "END TRIP";
+                              buttonTitleText = "END TRIP NOW";
                               buttonColor = Colors.amber;
                             });
 

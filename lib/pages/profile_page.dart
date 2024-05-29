@@ -53,7 +53,7 @@ class _ProfilePageState extends State<ProfilePage>
                 height: 180,
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.grey,
+                    color: Colors.white,
                     image: DecorationImage(
                         fit: BoxFit.fitHeight,
                         image: NetworkImage(
@@ -86,7 +86,7 @@ class _ProfilePageState extends State<ProfilePage>
                     ),
                     prefixIcon: Icon(
                       Icons.person,
-                      color: Colors.white,
+                      color: Colors.yellow,
                     ),
                   ),
                 ),
@@ -111,7 +111,7 @@ class _ProfilePageState extends State<ProfilePage>
                     ),
                     prefixIcon: Icon(
                       Icons.phone_android_outlined,
-                      color: Colors.white,
+                      color: Colors.yellow,
                     ),
                   ),
                 ),
@@ -136,7 +136,7 @@ class _ProfilePageState extends State<ProfilePage>
                     ),
                     prefixIcon: Icon(
                       Icons.email,
-                      color: Colors.white,
+                      color: Colors.yellow,
                     ),
                   ),
                 ),
@@ -161,7 +161,7 @@ class _ProfilePageState extends State<ProfilePage>
                     ),
                     prefixIcon: Icon(
                       Icons.drive_eta_rounded,
-                      color: Colors.white,
+                      color: Colors.yellow,
                     ),
                   ),
                 ),

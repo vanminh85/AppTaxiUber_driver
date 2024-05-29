@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen>
     }
     else if(passwordTextEditingController.text.trim().length < 5)
     {
-      cMethods.displaySnackBar("your password must be atleast 6 or more characters.", context);
+      cMethods.displaySnackBar("Password must be at least 6 characters.", context);
     }
     else
     {
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen>
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (BuildContext context) => LoadingDialog(messageText: "Allowing you to Login..."),
+      builder: (BuildContext context) => LoadingDialog(messageText: "Logging in..."),
     );
 
     final User? userFirebase = (
@@ -85,13 +85,13 @@ class _LoginScreenState extends State<LoginScreen>
           else
           {
             FirebaseAuth.instance.signOut();
-            cMethods.displaySnackBar("you are blocked. Contact admin: alizeb875@gmail.com", context);
+            cMethods.displaySnackBar("You are blocked. Contact admin: nvminh09@gmail.com", context);
           }
         }
         else
         {
           FirebaseAuth.instance.signOut();
-          cMethods.displaySnackBar("your record do not exists as a Driver.", context);
+          cMethods.displaySnackBar("The account is not exists as a Driver.", context);
         }
       });
     }
@@ -137,13 +137,13 @@ class _LoginScreenState extends State<LoginScreen>
                       controller: emailTextEditingController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
-                        labelText: "your Email",
+                        labelText: "Email",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
                       ),
                       style: const TextStyle(
-                        color: Colors.grey,
+                        color: Colors.green,
                         fontSize: 15,
                       ),
                     ),
@@ -155,13 +155,13 @@ class _LoginScreenState extends State<LoginScreen>
                       obscureText: true,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Password",
+                        labelText: "Password",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
                       ),
                       style: const TextStyle(
-                        color: Colors.grey,
+                        color: Colors.green,
                         fontSize: 15,
                       ),
                     ),
@@ -174,7 +174,7 @@ class _LoginScreenState extends State<LoginScreen>
                         checkIfNetworkIsAvailable();
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.purple,
+                          backgroundColor: Colors.blue,
                           padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 10)
                       ),
                       child: const Text(
@@ -195,9 +195,9 @@ class _LoginScreenState extends State<LoginScreen>
                   Navigator.push(context, MaterialPageRoute(builder: (c)=> SignUpScreen()));
                 },
                 child: const Text(
-                  "Don\'t have an Account? Register Here",
+                  "Do not have an Account? Register here",
                   style: TextStyle(
-                    color: Colors.grey,
+                    color: Colors.red,
                   ),
                 ),
               ),
